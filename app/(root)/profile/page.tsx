@@ -4,6 +4,15 @@ import { client } from "@/sanity/lib/client"
 import { AUTHOR_QUERY_BY_ID, STARTUPS_QUERY_BY_AUTHOR_ID} from "@/sanity/lib/query"
 import Image from "next/image"
 
+type Cardprops = {
+  _id: string;
+  _createdAt: string;
+  views: number;
+  title: string;
+  bio: string;
+  image: string;
+  category: string; 
+};
 
 
 
@@ -39,7 +48,7 @@ const page = async() => {
 
   
       <section className="p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post : any) => (
+        {posts.map((post : Cardprops) => (
           <div
             key={post._id}
             className="bg-white text-black rounded-xl overflow-hidden border-4 border-[#ff2969] hover:scale-[1.02] transition-all duration-300 shadow-md"
