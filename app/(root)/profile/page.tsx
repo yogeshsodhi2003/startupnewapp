@@ -5,15 +5,6 @@ import { AUTHOR_QUERY_BY_ID, STARTUPS_QUERY_BY_AUTHOR_ID} from "@/sanity/lib/que
 import Image from "next/image"
 
 
-type Post = {
-  _id: string;
-  _createdAt: string;
-  views: number;
-  title: string;
-  bio: string;
-  image: string;
-  category: string; 
-};
 
 
 const page = async() => {
@@ -26,7 +17,7 @@ const page = async() => {
    console.log(user._id)
    
    const posts = await client.fetch(STARTUPS_QUERY_BY_AUTHOR_ID, {id : user.id})
-  console.log("post" , posts)
+   console.log("post" , posts)
   
 
   return (
@@ -34,7 +25,7 @@ const page = async() => {
   
 
     <main className="min-h-screen  font-sans">
-      /* Profile Header */
+
       <section className="bg-[#ff2969] p-8 md:p-12 rounded-b-3xl shadow-lg flex flex-col items-center gap-4 text-center relative">
         <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-xl">
           <Image src={'/boy.png'} alt="user" width={128} height={128} className="object-cover" />
@@ -46,9 +37,9 @@ const page = async() => {
         </span>
       </section>
 
-      /* Posts Section */
+  
       <section className="p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
+        {posts.map((post : any) => (
           <div
             key={post._id}
             className="bg-white text-black rounded-xl overflow-hidden border-4 border-[#ff2969] hover:scale-[1.02] transition-all duration-300 shadow-md"
