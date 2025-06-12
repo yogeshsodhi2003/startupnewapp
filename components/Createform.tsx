@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import { createStartup } from "@/app/(root)/action/createStartup/page";
 
-const createform = () => {
+const Createform = () => {
   const router = useRouter();
 
   const [startups, setStartups] = useState({
@@ -78,4 +78,4 @@ const createform = () => {
   );
 };
 
-export default createform;
+export default Createform;

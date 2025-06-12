@@ -25,7 +25,7 @@ export default async function Home(props: {
         <Search />
         <div className="w-full text-left mt-5 ">
         {rawQuery ? (
-          <h1 className="head-text">Here's the result for {rawQuery}</h1>
+          <h1 className="head-text">Here the result for {rawQuery}</h1>
         ) : (
           <h1 className="head-text">Trending Startups</h1>
         )}

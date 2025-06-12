@@ -1,9 +1,9 @@
 import { auth } from "@/auth"
-import Box from "@/components/Box"
+
 import { client } from "@/sanity/lib/client"
 import { AUTHOR_QUERY_BY_ID, STARTUPS_QUERY_BY_AUTHOR_ID} from "@/sanity/lib/query"
 import Image from "next/image"
-``
+
 
 type Post = {
   _id: string;
@@ -34,7 +34,7 @@ const page = async() => {
   
 
     <main className="min-h-screen  font-sans">
-      {/* Profile Header */}
+      /* Profile Header */
       <section className="bg-[#ff2969] p-8 md:p-12 rounded-b-3xl shadow-lg flex flex-col items-center gap-4 text-center relative">
         <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-xl">
           <Image src={'/boy.png'} alt="user" width={128} height={128} className="object-cover" />
@@ -46,7 +46,7 @@ const page = async() => {
         </span>
       </section>
 
-      {/* Posts Section */}
+      /* Posts Section */
       <section className="p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <div
@@ -74,8 +74,7 @@ const page = async() => {
         ))}
       </section>
     </main>
-  );
-};
+  
 
 
 

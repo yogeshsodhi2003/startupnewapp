@@ -1,8 +1,7 @@
 import { auth } from "@/auth";
 import Box from "@/components/Box";
-import Hero from "@/components/Hero";
 import { redirect } from "next/navigation";
-import Createform from "@/components/createform";
+import Createform from "@/components/Createform";
 
 
 
