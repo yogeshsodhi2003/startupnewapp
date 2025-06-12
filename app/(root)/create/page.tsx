@@ -1,0 +1,28 @@
+import { auth } from "@/auth";
+import Box from "@/components/Box";
+import Hero from "@/components/Hero";
+import { redirect } from "next/navigation";
+import Createform from "@/components/createform";
+
+
+
+const page = async () => {
+
+  const session = await auth();
+  const heading = "create a startups"
+
+  if(!session) redirect('/');
+  return (
+    <>
+    <div className="heading">
+      <Box heading={heading}/>
+     </div>
+      <Createform/>
+   </>
+  )
+}
+
+export default page
+
+
+
