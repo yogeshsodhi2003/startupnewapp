@@ -3,7 +3,7 @@ import Box from "@/components/Box"
 import { client } from "@/sanity/lib/client"
 import { AUTHOR_QUERY_BY_ID, STARTUPS_QUERY_BY_AUTHOR_ID} from "@/sanity/lib/query"
 import Image from "next/image"
-
+``
 
 type Post = {
   _id: string;
