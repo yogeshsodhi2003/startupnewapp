@@ -64,7 +64,7 @@ export const STARTUPS_QUERY_BY_AUTHOR_ID = defineQuery(`
     _type == "startups" && 
     
 
-    author._ref == $id
+    author->email == $email
 ]  {
     _createdAt,
     title,

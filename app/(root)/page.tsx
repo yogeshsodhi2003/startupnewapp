@@ -3,6 +3,7 @@ import Card from "@/components/Card";
 import Search from "@/components/Search";
 
 import { STARTUPS_QUERY } from "@/sanity/lib/query";
+
 import { sanityFetch } from "@/sanity/lib/live";
 
 export default async function Home(props: {
@@ -11,7 +12,8 @@ export default async function Home(props: {
   const searchParams = await props.searchParams;
   const rawQuery = searchParams.q?.trim();
   const params = { search: rawQuery || "" };
-  const heading = "The Stage for Startups to Pitch, Shine, and Scale"
+  const heading = "The Stage for Startups to Pitch, Shine, and Scale";
+
 
   const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY, params });
 
@@ -24,14 +26,15 @@ export default async function Home(props: {
       <div className="flex  items-center flex-col p-8">
         <Search />
         <div className="w-full text-left mt-5 ">
-        {rawQuery ? (
-          <h1 className="head-text">Here the result for {rawQuery}</h1>
-        ) : (
-          <h1 className="head-text">Trending Startups</h1>
-        )}
+          {rawQuery ? (
+            <h1 className="head-text">Here the result for {rawQuery}</h1>
+          ) : (
+            <h1 className="head-text">Trending Startups</h1>
+          )}
         </div>
       </div>
       <Card posts={posts || []} />
+    
     </>
   );
 }
